@@ -2,6 +2,10 @@
 
 NO EDITS REQUIRED IN THIS FILE (if paths have not changed.)
 
+## Author: Britany Goucher
+
+## Date: 2026-11
+
 Purpose
 
   Orchestrate a standard EVTL pipeline for web document data.
