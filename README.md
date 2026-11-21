@@ -72,6 +72,16 @@ The Transform stage also calculates
 derived fields such as abstract word count
 and number of authors.
 
+## Technical Modification
+Add Textblob to imports. Update pyproject.toml. Update
+Stage 03-transform to reflect sentiment score and
+label. Initial predication based off research suggests
+that academic work may result in neutral labels. Interested
+in applying this technique in the custom project to news site.
+Sentiment score and label ran successfully in the example
+project and resulted in a neutral label.
+![Sentiment Score and Label](image.png)
+
 Explore these important project components:
 
 - [pyproject.toml](pyproject.toml) - project identity, dependencies, and tool configuration.

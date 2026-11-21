@@ -27,6 +27,7 @@ The project uses:
 - HTML selectors for locating document content.
 - Validation checks for confirming required elements.
 - Pandas for structured data transformation.
+- Textblob for Sentiment Analysis
 - CSV for persistent output.
 - Logging for execution records.
 - Ruff, ty, and pytest for code verification.
@@ -68,6 +69,17 @@ information from an HTML document.
 
 Automated tests provide additional verification
 of the pipeline's expected behavior.
+
+## Technical Modification
+
+Add Textblob to imports. Update pyproject.toml. Update
+Stage 03-transform to reflect sentiment score and
+label. Initial predication based off research suggests
+that academic work may result in neutral labels. Interested
+in applying this technique in the custom project to news site.
+Sentiment score and label ran successfully in the example
+project and resulted in a neutral label.
+![Sentiment Score and Label](image.png)
 
 ## Interpretation
 
