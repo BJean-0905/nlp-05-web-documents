@@ -81,6 +81,23 @@ Sentiment score and label ran successfully in the example
 project and resulted in a neutral label.
 ![Sentiment Score and Label](image.png)
 
+## Custom Project
+
+Using HTML from this site, https://arxiv.org/abs/2611.26092,
+the EVTL pipeline was updated and applied using the technical modification
+sentiment analysis. Files, pipeline_web_html and config were copied and updated
+to reflect the new URL and project. Assumption was that the label would still
+result in neutral as the site is academic in nature. The assumption was confirmed.
+
+Powershell command:
+uv run python -m nlp.pipeline_web_html_goucher
+
+![Custom Project Sentiment Analysis](image-1.png)
+
+The following files are created:
+  -[Processed Data](data/processed/goucher_processed.csv)
+  -[Raw Data](data/raw/goucher_raw.html)
+
 ## Interpretation
 
 HTML documents are primarily designed
@@ -108,10 +125,10 @@ provide inputs for subsequent NLP analysis.
 
 ## Project Links
 
-- [GitHub Repository](https://github.com/denisecase/nlp-05-web-documents)
-- [Example Pipeline](https://github.com/denisecase/nlp-05-web-documents/blob/main/src/nlp/pipeline_web_html.py)
-- [Example Configuration](https://github.com/denisecase/nlp-05-web-documents/blob/main/src/nlp/config.py)
-- [Pipeline Stages](https://github.com/denisecase/nlp-05-web-documents/tree/main/src/nlp)
+- [GitHub Repository](https://github.com/BJean-0905/nlp-05-web-documents)
+- [Example Pipeline](https://github.com/BJean-0905/nlp-05-web-documents/blob/main/src/nlp/pipeline_web_html.py)
+- [Example Configuration](https://github.com/BJean-0905/nlp-05-web-documents/blob/main/src/nlp/config.py)
+- [Pipeline Stages](https://github.com/BJean-0905/nlp-05-web-documents/tree/main/src/nlp)
 
 ## Project Resources
 

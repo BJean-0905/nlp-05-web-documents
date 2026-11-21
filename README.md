@@ -111,6 +111,24 @@ From a VS Code terminal in the project root:
 uv run python -m nlp.pipeline_web_html
 ```
 
+```shell
+uv run python -m nlp.pipeline_web_html_goucher
+```
+
+## Custom Project
+
+Using HTML from this site, https://arxiv.org/abs/2611.26092,
+the EVTL pipeline was updated and applied using the technical modification
+sentiment analysis. Files, pipeline_web_html and config were copied and updated
+to reflect the new URL and project. Assumption was that the label would still
+result in neutral as the site is academic in nature. The assumption was confirmed.
+
+![Custom Project Sentiment Analysis](image-1.png)
+
+The following files are created:
+- [Processed Data](data/processed/goucher_processed.csv)
+- [Raw Data](data/raw/goucher_raw.html)
+
 ## Results
 
 The pipeline retrieves an HTML document,
