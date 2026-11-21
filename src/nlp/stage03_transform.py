@@ -86,6 +86,7 @@ import logging
 
 from bs4 import BeautifulSoup, Tag
 import pandas as pd
+from textblob import TextBlob
 
 # ============================================================
 # Section 2. Define Run Transform Function
@@ -265,7 +266,24 @@ def run_transform(
     author_count: int = (
         len([a.strip() for a in authors.split(",")]) if authors != "unknown" else 0
     )
+
+    # Calculate sentiment score
+    if abstract != "unknown":
+        sentiment_score = TextBlob(abstract).sentiment.polarity
+    else:
+        sentiment_score = 0.0
+
+    # Create sentiment label
+    if sentiment_score > 0.1:
+        sentiment_label = "positive"
+    elif sentiment_score < -0.1:
+        sentiment_label = "negative"
+    else:
+        sentiment_label = "neutral"
+
     LOG.info(f"Calculated author count: {author_count}")
+    LOG.info(f"Calculated sentiment score: {sentiment_score}")
+    LOG.info(f"Calculated sentiment label: {sentiment_label}")
 
     LOG.info("========================")
     LOG.info("STAGE 03f: Build record and create DataFrame")
@@ -280,6 +298,8 @@ def run_transform(
         "abstract": abstract,
         "abstract_word_count": abstract_word_count,
         "author_count": author_count,
+        "sentiment_score": sentiment_score,
+        "sentiment_label": sentiment_label,
     }
 
     df = pd.DataFrame([record])
@@ -290,6 +310,8 @@ def run_transform(
     LOG.info(f"  Title: {title}")
     LOG.info(f"  Author count: {record['author_count']}")
     LOG.info(f"  Abstract word count: {record['abstract_word_count']}")
+    LOG.info(f"  Sentiment score: {record['sentiment_score']}")
+    LOG.info(f"  Sentiment label: {record['sentiment_label']}")
     LOG.info(f"  DataFrame preview:\n{df.head()}")
 
     LOG.info("Sink: Pandas DataFrame created")

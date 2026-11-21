@@ -36,7 +36,7 @@ Notes:
 
 Run from root project folder with:
 
-  uv run python -m nlp.pipeline_web_html
+"uv run python -m nlp.pipeline_web_html"
 """
 
 # ============================================================
